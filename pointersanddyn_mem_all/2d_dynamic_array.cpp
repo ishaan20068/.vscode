@@ -18,14 +18,15 @@ int main(){
             count++;
         }
     }
-    // for (int i = 0; i < 4; i++){
-    //     for (int j = 0; j < 3; j++){
-    //         cout<<p[i][j]<<" ";
-    //     }
-    //     cout<<endl;
-    // }
-    
-    //spiral(p,0,2,0,3);
+    for (int i = 0; i < 4; i++){
+        for (int j = 0; j < 3; j++){
+            cout<<p[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    //using dynamically allocated 2d arrays we can also create 2d arrays with different size
+    // for example : a={{1},{2,3},{4,5,6}}
+    spiral(p,0,2,0,3);
     printmat(a,3,3);
     return 0;
 }
