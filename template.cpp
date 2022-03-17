@@ -61,21 +61,7 @@ template<typename T>
 void printvec(vector<T>v){int n=v.size();fr(i,n){cout<<v[i]<<" ";cout<<endl;}}
 template<typename T>
 int sumvec(vector<T>v){int n=v.size();int s=0;fr(i,n){s+=v[i];}return s;}
-
-void ans(){
-    int n;
-    cin>>n;
-
-}
-int32_t main(){
-    fast
-    int t;cin>>t;
-    for(int i=0;i<t;i++){ans();}
-    //ans() //for the case with single test case
-    return 0;
-}
-
-void pa(int* a,int n){for (int i = 0; i < n ; i++){cout<<a[i]<<endl;}}
+void pa(int* a,int n){for (int i = 0; i < n ; i++){cout<<a[i]<<" ";}}
 int count(int* a,int n,int ele){int c=0;for(int i=0;i<n;i++){if(a[i]==ele){c+=1;}}return c;}
 int index(int* a,int n,int ele){for(int i=0;i<n;i++){if(a[i]==ele){return i;}}return -1;}
 int sum(int* a,int n){int s=0;for(int i=0;i<n;i++){s+=a[i];}return s;}
@@ -91,3 +77,17 @@ bool prime(int n) {if(n==1){return false;}for(int i=2;i*i<n;i++){if(n%i==0){retu
 int modadd(int a, int b, int m) {a = a % m; b = b % m; return (((a + b) % m) + m) % m;}
 int modmul(int a, int b, int m) {a = a % m; b = b % m; return (((a * b) % m) + m) % m;}
 int modsub(int a, int b, int m) {a = a % m; b = b % m; return (((a - b) % m) + m) % m;}
+template<typename T>
+void printmat(T a,int n,int m){for(int i=0;i<n;i++){for(int j=0;j<m;j++){cout<<*(*(a+i)+j)<<" ";}cout<<endl;}}
+void ans(){
+    int n;
+    cin>>n;
+
+}
+int32_t main(){
+    fast
+    int t;cin>>t;
+    //int t=1; //for the case with single test case
+    for(int i=0;i<t;i++){ans();}
+    return 0;
+}
