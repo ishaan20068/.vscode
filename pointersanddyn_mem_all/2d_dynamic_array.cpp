@@ -1,32 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
-void spiral(int ** a,int left, int right, int up, int down){
-    if(up==down){for(int i=left;i<=right;i++){cout<<a[up][i]<<" ";}return ;}else if(left==right){for(int i=up;i<=down;i++){cout<<a[i][left]<<" ";}return;}else{for(int i=left;i<=right;i++){cout<<a[up][i]<<" ";}up++;for(int i=up;i<=down;i++){cout<<a[i][right]<<" ";}right--;for(int i=right;i>=left;i--){cout<<a[down][i]<<" ";}down--;for(int i=down;i>=up;i--){cout<<a[i][left]<<" ";}left++;return spiral(a,left,right,up,down);}}
 template<typename T>
 void printmat(T a,int n,int m){for(int i=0;i<n;i++){for(int j=0;j<m;j++){cout<<*(*(a+i)+j)<<" ";}cout<<endl;}}
-
 int main(){
-    int ** p=new int*[4];
-    for (int i = 0; i < 4; i++){
-        p[i]=new int[3];
+    int ** p=new int*[6];
+    for (int i = 0; i < 6; i++){
+        p[i]=new int[4];
     }
-    int a[][3]={{1,2,3},{4,5,6},{7,8,9}};
+    int a[3][4]={{1,2,3,4},{5,6,7,8},{9,0,1,2}};
     int count=1;
-    for (int i = 0; i < 4; i++){
-        for (int j = 0; j < 3; j++){
+    for (int i = 0; i < 6; i++){
+        for (int j = 0; j < 4; j++){
             p[i][j]=count;
             count++;
         }
     }
-    for (int i = 0; i < 4; i++){
-        for (int j = 0; j < 3; j++){
+    for (int i = 0; i < 6; i++){
+        for (int j = 0; j < 4; j++){
             cout<<p[i][j]<<" ";
         }
         cout<<endl;
     }
     //using dynamically allocated 2d arrays we can also create 2d arrays with different size
     // for example : a={{1},{2,3},{4,5,6}}
-    spiral(p,0,2,0,3);
-    printmat(a,3,3);
+    printmat(a,3,4);
+    //to delete the dynamically allocated 2d array
+    //first delete all the subarrays and then delete the pointer array
+    // for this case it will look as follows:
+    for(int i=0;i<4;i++){
+        delete [] p[i];
+    }
+    delete [] p;
     return 0;
 }
