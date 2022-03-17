@@ -69,7 +69,7 @@ bool sorta(const pair<int,int> &a,const pair<int,int> &b){return (a.second < b.s
 bool sortd(const pair<int,int> &a,const pair<int,int> &b){return (a.second > b.second);}
 // Mathematical functions
 int gcd(int a, int b){if (b == 0)return a;return gcd(b, a % b);} //__gcd 
-int lcm(int a, int b){return (a/gcd(a,b)*b);}
+inline int lcm(int a, int b){return (a/gcd(a,b)*b);}
 int expmod(int x, int y, int p){int res = 1;x = x % p;if (x == 0) return 0;while (y > 0){if (y & 1)res = (res*x) % p;y = y>>1;x = (x*x) % p;}return res;}
 bool twop(int n){if(n==0)return false;return (ceil(log2(n)) == floor(log2(n)));}
 bool sq(int x){if(x >= 0){int sr = sqrt(x);return (sr * sr == x);}return false;}
@@ -77,6 +77,7 @@ bool prime(int n) {if(n==1){return false;}for(int i=2;i*i<n;i++){if(n%i==0){retu
 int modadd(int a, int b, int m) {a = a % m; b = b % m; return (((a + b) % m) + m) % m;}
 int modmul(int a, int b, int m) {a = a % m; b = b % m; return (((a * b) % m) + m) % m;}
 int modsub(int a, int b, int m) {a = a % m; b = b % m; return (((a - b) % m) + m) % m;}
+int power(int a,int b) {if(b==0){return 1;}int res=power(a, b / 2);if (b % 2){return res*res*a;}else{return res*res;}}
 template<typename T>
 void printmat(T a,int n,int m){for(int i=0;i<n;i++){for(int j=0;j<m;j++){cout<<*(*(a+i)+j)<<" ";}cout<<endl;}}
 void ans(){
