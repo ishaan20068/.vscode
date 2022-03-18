@@ -15,15 +15,15 @@ int f(int n,int val,int *a){
 void ans(){
     int n;
     cin>>n;
-    mk(a,2,int);
+    mk(a,1000,int);
     a[0]=1;a[1]=1;
     o(f(n,1,a));
     delete [] a;
 }
 int32_t main(){
     fast
-    //int t;cin>>t;
-    int t=1;
+    int t;cin>>t;
+    //int t=1;
     for(int i=0;i<t;i++){ans();}
     return 0;
 }
