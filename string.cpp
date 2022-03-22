@@ -18,7 +18,6 @@ int count(string x,char k){
     }
     return c;
 }
-
 int main(){
     string x="ishaan";
     cout<<indexneg1(x,'a',x.size()-1) ;

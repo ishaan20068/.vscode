@@ -17,8 +17,7 @@ int main(){
     }
     for (int i = 0; i < 6; i++){
         for (int j = 0; j < 4; j++){
-            cout<<p[i][j]<<" ";
-        }
+            cout<<p[i][j]<<" ";}
         cout<<endl;
     }
     //using dynamically allocated 2d arrays we can also create 2d arrays with different size

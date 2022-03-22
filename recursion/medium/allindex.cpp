@@ -7,7 +7,6 @@ using namespace std;
 #define in              cin>>
 #define o(x)            cout<<x<<" ";
 #define mk(a,n,type)    type *a=new type[n];
-
 void f(int *a,int i,int n, int k){
     if(i==n){
         return ;

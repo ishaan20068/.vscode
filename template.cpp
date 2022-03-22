@@ -88,7 +88,7 @@ void ans(){
 int32_t main(){
     fast
     int t;cin>>t;
-    //int t=1; //for the case with single test case
+    //int t=1; //for the case with single test case 
     for(int i=0;i<t;i++){ans();}
     return 0;
 }

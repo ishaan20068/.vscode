@@ -12,8 +12,7 @@ int main(){
     }
     //to avoid the type we can use the keyword auto
     for(auto x:a){
-        cout<<x<<endl;
-    }
+        cout<<x<<endl;}
     string x="new string";
     cout<<x;
     return 0;

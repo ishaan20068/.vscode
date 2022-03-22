@@ -14,5 +14,4 @@ int main(){
     for(int i=0;i<50;i++){
         cout<<p1[i]<<endl;
     }
-    return 0;
-}
+    return 0;}

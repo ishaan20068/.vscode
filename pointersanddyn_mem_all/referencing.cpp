@@ -19,5 +19,4 @@ int main(){
     cout<<j<<endl;
     f(i);
     cout<<j<<endl;
-    return 0;
-}
+    return 0;}

@@ -10,7 +10,6 @@ int main(){
     int i=65;
     char c=i;
     cout <<c<<endl;// char implicitly converted to int 
-    
     int *p=&i;
     char * pc=(char*)p;//explicit convertion from int* to char*
     //now since the first byte has least significant byte, so p has address to 65

@@ -16,5 +16,4 @@ void ans(){
     o(num(n))}
 int32_t main(){
     fast
-    int t=1;
-    for(int i=0;i<t;i++){ans();}return 0;}
+    int t=1;for(int i=0;i<t;i++){ans();}return 0;}
