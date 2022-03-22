@@ -1,3 +1,5 @@
+/*in an array, find the index of last occurence of a given number
+for example last index of 3 in [1,2,3,3,1,4,2,3,5] is 7*/
 #include<bits/stdc++.h>
 using namespace std;
 #define fast            ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
@@ -6,7 +8,6 @@ using namespace std;
 #define in              cin>>
 #define o(x)            cout<<x<<endl;
 #define mk(a,n,type)    type *a=new type[n];
-
 int f(int *a,int i,int n, int k){
     if(i==-1){
         return -1;

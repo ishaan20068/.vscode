@@ -1,3 +1,4 @@
+/* REPLACE all appearances of "pi" by "3.14". */
 #include<bits/stdc++.h>
 using namespace std;
 #define fast            ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);

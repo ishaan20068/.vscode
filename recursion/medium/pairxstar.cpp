@@ -1,3 +1,5 @@
+/* if two simultaneous characters are same then separate them by 
+adding * in between. for example aaa becomes a*a*a and abb becomes ab*b */
 #include<bits/stdc++.h>
 using namespace std;
 #define fast            ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
