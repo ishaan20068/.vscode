@@ -83,15 +83,28 @@ int modsub(int a, int b, int m) {a = a % m; b = b % m; return (((a - b) % m) + m
 int power(int a,int b) {if(b==0){return 1;}int res=power(a, b / 2);if (b % 2){return res*res*a;}else{return res*res;}}
 template<typename T>
 void printmat(T a,int n,int m){for(int i=0;i<n;i++){for(int j=0;j<m;j++){cout<<*(*(a+i)+j)<<" ";}cout<<endl;}}
+
+char chars[27]={' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+void f(string s,string code,int index){
+    if(index==s.size()){o(code) return ;}
+    string code1=code+chars[s[index]-48];
+    f(s,code1,index+1);
+    if(index<s.size()-1){
+    if((s[index]-48)*10+s[index+1]-48<27){
+        string code2=code+chars[(s[index]-48)*10+s[index+1]-48];
+        f(s,code2,index+2);
+    }}
+}
 void ans(){
-    int n;
+    string n;
     cin>>n;
-    
+    f(n,"",0);
 }
 int32_t main(){
     fast
-    int t;cin>>t;
-    //int t=1;
+    //int t;cin>>t;
+    int t=1;
     for(int i=0;i<t;i++){ans();}
     return 0;
 }
