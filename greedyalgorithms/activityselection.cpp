@@ -1,3 +1,5 @@
+//given a set of activities with their start and end times, find the maximum number of 
+//activities a person can perform given that he can do atmost one activity at a time.
 #include<bits/stdc++.h>
 using namespace std;
 #define fast            ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
