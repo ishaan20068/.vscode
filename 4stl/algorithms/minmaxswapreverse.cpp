@@ -20,6 +20,8 @@ void ans(){
     vll v={1,2,3,4,5};
     reverse(all(v));
     o(v)
+    int min=*min_element(all(v));
+    o(min)
 }
 int32_t main(){
     fast

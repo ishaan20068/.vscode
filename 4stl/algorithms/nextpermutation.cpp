@@ -8,7 +8,7 @@ typedef vector<int>                     vll;
 template<typename T> // cout << vector<T>
 ostream& operator<<(ostream &ostream, const vector<T> &c) { for (auto &it : c) cout << it << " "; return ostream; }
 void ans(){
-    vll v={10,20,50,40,30};
+    vll v={1,2,3,6,5,4};
     next_permutation(all(v));
     o(v)
     vector<string> v1={"a","b","c","d"};
