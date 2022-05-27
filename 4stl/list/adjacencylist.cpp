@@ -44,23 +44,27 @@ void ans(){
     in e;
     fr(i,e){
         o("edge "<<(i+1))
-        o("choose your starting vertex(0 to "<<n-1<<"): ")
+        o("choose your starting vertex(1 to "<<n<<"): ")
         int s,l,w;
         in s;
         o("choose your destination vertex: ")
         in l;
         o("choose weight of edge"<<(i+1)<<": ")
         in w;
-        a[s].pb(mp(l,w));
+        a[s-1].pb(mp(l,w));
+        a[l-1].pb(mp(s,w));
     }
     fr(i,n){
-        
+        cout<<i+1<<"-->";
+        for(auto j=a[i].begin();j!=a[i].end();j++){
+            cout<<" ("<<(*j).ff<<","<<(*j).ss<<") -->";
+        }
+        cout<<" NULL"<<endl;
     }
 }
 int32_t main(){
     fast
-    int t;cin>>t;
-    //int t=1;
+    int t=1;
     for(int i=0;i<t;i++){ans();}
     return 0;
 }
