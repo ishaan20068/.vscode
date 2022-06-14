@@ -18,7 +18,11 @@ void ans(){
     fr(i,n){int k;in k;a.pb(k);}
     bool flag=false;
     fro(i,n-1,0){
-        if(a[i]>a[i-1]){flag=true;swap(a[i-1],a[n-1]);sort(a.begin()+i,a.end());o(a) break;}
+        if(a[i]>a[i-1]){flag=true;reverse(a.begin()+i,a.end());
+        int t=upper_bound(a.begin()+i,a.end(),a[i-1])-a.begin();
+        swap(a[t],a[i-1]);
+        o(a)
+        break;}
     }
     if(flag==false){
         reverse(all(a));
@@ -27,7 +31,7 @@ void ans(){
 }
 int32_t main(){
     fast
-    int t=5;
+    int t=1;
     for(int i=0;i<t;i++){ans();}
     return 0;
 }
