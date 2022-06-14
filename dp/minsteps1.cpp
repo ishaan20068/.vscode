@@ -1,3 +1,5 @@
+//you can subtract 1, divide by 2(if possible), divide by 3(if
+//possible), find minimum operations to reach 1.
 #include<bits/stdc++.h>
 using namespace std;
 #define fast            ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
