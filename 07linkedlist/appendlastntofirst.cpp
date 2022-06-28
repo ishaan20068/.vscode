@@ -27,43 +27,30 @@ class node{
     //removes the first element in linked list in O(1) time
     node* pop(){node<t>* x=this->next;this->next=NULL;return x;}
 };
-template<typename t>
-node<t>* input(){int v;cin>>v;if(v==-1){return NULL;}node<t> head(v);node<t> temp=head;while(v!=-1){cin>>v;if(v==-1){break;}node x(v);head.next=x;head=head.next;}}
+node<int>* input(){int v;cin>>v;if(v==-1){return NULL;}node<int>* head=new node<int>(v);node<int>* temp=head;while(v!=-1){cin>>v;if(v==-1){break;}node<int>* x=new node<int>(v); head->next=x;head= head->next;}node<int>* t=temp;while(temp->next!=NULL){temp->tail=head;temp=temp->next;}temp->tail=head;return t;}
+
+void ans(){
+    node<int>* l=input();
+    int n;cin>>n;
+    int length=l->len();
+    length-=n;
+    node<int>*temp1=l;
+    for(int i=0;i<length-1;i++){
+        l=l->next;
+    }
+    node<int>* temp2=l->next;
+    l->next=NULL;
+    l->tail->next=temp1;
+    node<int>* t=temp2;
+    while(temp2->next!=NULL){
+        temp2->tail=l;
+        temp2=temp2->next;
+    }
+    temp2->tail=l;
+    t->print();
+}
 int main(){
-    node<int> n1(1);
-    node<int> n2(2);
-    node<int> n3(3);
-    node<int> n4(4);
-    node<int> n5(5);
-    node<int> n6(6);
-    n1.next=&n2;
-    n2.next=&n3;
-    n3.next=&n4;
-    n4.next=&n5;
-    n5.next=&n6;
-    n1.print();
-    node<int> m1(10);
-    m1.insert(20);
-    m1.insert(30);
-    m1.insert(40);
-    m1.insert(50);
-    m1.print();
-    int x=m1.len();
-    cout<<x<<endl;
-    cout<< m1.get(2)<<endl;
-    cout<<m1.has(40)<<endl;
-    cout<<m1.has(60)<<endl;
-    m1.insert(1,15);
-    m1.print();
-    m1.insert(6,60);
-    m1.insert(10,100);
-    m1.print();
-    node<int> m2=m1.push(0);
-    m2.print();
-    m2.del(2);
-    m2.print();
-    node<int> * m3=m2.pop();
-    m3->print();
-    m2.print();
+    int t;cin>>t;
+    for(int i=0;i<t;i++){ans();}
     return 0;
 }

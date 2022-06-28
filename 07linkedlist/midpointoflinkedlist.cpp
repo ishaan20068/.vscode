@@ -1,5 +1,8 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
+#define fast            ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define int             long long
+#define o(x)            cout<<x<<endl;
 template<class t>
 class node{
     public:
@@ -27,43 +30,26 @@ class node{
     //removes the first element in linked list in O(1) time
     node* pop(){node<t>* x=this->next;this->next=NULL;return x;}
 };
-template<typename t>
-node<t>* input(){int v;cin>>v;if(v==-1){return NULL;}node<t> head(v);node<t> temp=head;while(v!=-1){cin>>v;if(v==-1){break;}node x(v);head.next=x;head=head.next;}}
-int main(){
-    node<int> n1(1);
-    node<int> n2(2);
-    node<int> n3(3);
-    node<int> n4(4);
-    node<int> n5(5);
-    node<int> n6(6);
-    n1.next=&n2;
-    n2.next=&n3;
-    n3.next=&n4;
-    n4.next=&n5;
-    n5.next=&n6;
-    n1.print();
-    node<int> m1(10);
-    m1.insert(20);
-    m1.insert(30);
-    m1.insert(40);
-    m1.insert(50);
-    m1.print();
-    int x=m1.len();
-    cout<<x<<endl;
-    cout<< m1.get(2)<<endl;
-    cout<<m1.has(40)<<endl;
-    cout<<m1.has(60)<<endl;
-    m1.insert(1,15);
-    m1.print();
-    m1.insert(6,60);
-    m1.insert(10,100);
-    m1.print();
-    node<int> m2=m1.push(0);
-    m2.print();
-    m2.del(2);
-    m2.print();
-    node<int> * m3=m2.pop();
-    m3->print();
-    m2.print();
+node<int>* input(){int v;cin>>v;if(v==-1){return NULL;}node<int>* head=new node<int>(v);node<int>* temp=head;while(v!=-1){cin>>v;if(v==-1){break;}node<int>* x=new node<int>(v); head->next=x;head= head->next;}return temp;}
+
+
+
+
+
+
+void ans(){
+    node<int>* m=input();
+    node<int>* slow=m;
+    node<int>* f=m->next;
+    while(f!=NULL && f->next!=NULL){
+        f=f->next->next;
+        slow=slow->next;
+    }
+    o(slow->data)
+}
+int32_t main(){
+    fast
+    int t=1;
+    for(int i=0;i<t;i++){ans();}
     return 0;
 }

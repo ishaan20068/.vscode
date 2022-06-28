@@ -1,3 +1,4 @@
+//we can taqke 1,2,3 steps, find number of ways to reach the nth stair
 #include<bits/stdc++.h>
 using namespace std;
 #define fast            ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
