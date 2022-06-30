@@ -114,52 +114,37 @@ node<int>* input(){int v;cin>>v;if(v==-1){return NULL;}node<int>* head=new node<
 
 
 
-
-
-
-void ans(){
-    node<int>* l=input();
-    node<int>* k=l;
-    int m,n;in m>>n;
-    node<int>* fp=NULL;node<int>* fn=NULL;node<int>* np=NULL;node<int>* nn=NULL;
-    if(l->data==m || l->data==n){
-        fp=k;
-        fn=k->next;
-        while(k->next!=NULL){
-            if(k->next->data==m || k->next->data==n){
-                node<int>*t=k->next;
-                np=k;nn=k->next->next;
-                k->next->next=fn;
-                fp->next=nn;np->next=fp;
-                t->print();
-                break;
-            }
-            k=k->next;
+node<int>* f(node<int>* l,int m,int n,int len){
+    if(len<=m+n){
+        if(len<=m){return l;}
+        else{
+            node<int>* k=l;
+            fr(i,m-1){l=l->next;}
+            l->next=NULL;return k;
         }
     }
     else{
-        while(k->next!=NULL){
-            if(k->next->data==m || k->next->data==n){
-                if(fp==NULL){
-                    fp=k;fn=k->next->next;
-                }
-                else{
-                    np=k;nn=k->next->next;
-                    node<int>*t=k->next;
-                    fp->next->next=nn;t->next=fn;
-                    np->next=fp->next;fp->next=t;
-                    l->print();break;
-                }
-            }
-            k=k->next;
-        }
-        
+        node<int>*k=l;
+        fr(i,m-1){l=l->next;}
+        node<int>* t1=l;
+        fr(i,n){l=l->next;}
+        t1->next=f(l->next,m,n,(len-m-n));
+        l->next=NULL;
+        return k;
     }
+}
+
+
+void ans(){
+    int n,m;
+    cin>>m>>n;
+    node<int>* l=input();
+    l=f(l,m,n,l->len());
+    l->print();
 }
 int32_t main(){
     fast
-    int t;cin>>t;
-    //int t=1;
+    int t=1;
     for(int i=0;i<t;i++){ans();}
     return 0;
 }

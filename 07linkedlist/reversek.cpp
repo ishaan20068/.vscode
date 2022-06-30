@@ -112,49 +112,43 @@ class node{
 };
 node<int>* input(){int v;cin>>v;if(v==-1){return NULL;}node<int>* head=new node<int>(v);node<int>* temp=head;while(v!=-1){cin>>v;if(v==-1){break;}node<int>* x=new node<int>(v); head->next=x;head= head->next;}return temp;}
 
-
+node<int>* f(node<int>* l,int k,int len){
+    if(l==NULL){return NULL;}
+    if(k<=1){return l;}
+    if(len<=k){
+        node<int>* prev=NULL;node<int> * curr=l;node<int>* ahead=l->next;
+        while(ahead!=NULL){
+            curr->next=prev;
+            prev=curr;
+            curr=ahead;
+            ahead=curr->next;
+        }
+        curr->next=prev;
+        return curr;
+    }
+    else{
+        node<int>*head=l;int i=0;
+        node<int>* prev=NULL;node<int> * curr=l;node<int>* ahead=l->next;
+        while(i<k){
+            curr->next=prev;
+            prev=curr;
+            curr=ahead;
+            ahead=curr->next;i++;
+        }
+        head->next=f(curr,k,len-k);
+        return prev;
+    }
+}
 
 
 
 
 void ans(){
+    int n;
+    cin>>n;
     node<int>* l=input();
-    node<int>* k=l;
-    int m,n;in m>>n;
-    node<int>* fp=NULL;node<int>* fn=NULL;node<int>* np=NULL;node<int>* nn=NULL;
-    if(l->data==m || l->data==n){
-        fp=k;
-        fn=k->next;
-        while(k->next!=NULL){
-            if(k->next->data==m || k->next->data==n){
-                node<int>*t=k->next;
-                np=k;nn=k->next->next;
-                k->next->next=fn;
-                fp->next=nn;np->next=fp;
-                t->print();
-                break;
-            }
-            k=k->next;
-        }
-    }
-    else{
-        while(k->next!=NULL){
-            if(k->next->data==m || k->next->data==n){
-                if(fp==NULL){
-                    fp=k;fn=k->next->next;
-                }
-                else{
-                    np=k;nn=k->next->next;
-                    node<int>*t=k->next;
-                    fp->next->next=nn;t->next=fn;
-                    np->next=fp->next;fp->next=t;
-                    l->print();break;
-                }
-            }
-            k=k->next;
-        }
-        
-    }
+    l=f(l,n,l->len());
+    l->print();
 }
 int32_t main(){
     fast
