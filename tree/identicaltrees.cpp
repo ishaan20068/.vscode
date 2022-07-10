@@ -83,7 +83,6 @@ int modsub(int a, int b, int m) {a = a % m; b = b % m; return (((a - b) % m) + m
 int power(int a,int b) {if(b==0){return 1;}int res=power(a, b / 2);if (b % 2){return res*res*a;}else{return res*res;}}
 template<typename T>
 void printmat(T a,int n,int m){for(int i=0;i<n;i++){for(int j=0;j<m;j++){cout<<*(*(a+i)+j)<<" ";}cout<<endl;}}
-
 template<typename t>
 class tree{
     public:
@@ -105,24 +104,35 @@ class tree{
 
 
 
+bool isidentical(tree<int>* t1,tree<int>* t2){
+    if(t1->val!=t2->val){return false;}
+    if(t1->child.size()!=t2->child.size()){return false;}
+    for(int i=0;i<t1->child.size();i++){
+        if(!isidentical(t1->child[i],t2->child[i])){return false;}
+    }
+    return true;
+}
 
 void ans(){
-    tree<int>* t=new tree<int>(1);
-    t->addchild(2);
-    t->addchild(3);
-    t->addchild(4);
-    t->child[0]->addchild(5);
-    t->child[0]->addchild(7);
-    t->child[1]->addchild(6);
-    t->child[1]->addchild(8);
-    t->child[2]->addchild(9);
-    t->print();cout<<endl;
-    o(t->count())
-    o(t->height())
-    o(t->depth(t->child[0]->child[0]))
-    t->delchild(2);
-    t->print();
-    delete t;
+    tree<int>* t1=new tree<int>(1);
+    t1->addchild(2);
+    t1->addchild(3);
+    t1->addchild(4);
+    t1->child[0]->addchild(5);
+    t1->child[0]->addchild(7);
+    t1->child[1]->addchild(6);
+    t1->child[1]->addchild(8);
+    t1->child[2]->addchild(9);
+    tree<int>* t2=new tree<int>(1);
+    t2->addchild(2);
+    t2->addchild(3);
+    t2->addchild(4);
+    t2->child[0]->addchild(5);
+    t2->child[0]->addchild(7);
+    t2->child[1]->addchild(6);
+    t2->child[1]->addchild(8);
+    t2->child[2]->addchild(9);
+    if(isidentical(t1,t2)){py}else{pn}
 }
 int32_t main(){
     fast

@@ -83,7 +83,6 @@ int modsub(int a, int b, int m) {a = a % m; b = b % m; return (((a - b) % m) + m
 int power(int a,int b) {if(b==0){return 1;}int res=power(a, b / 2);if (b % 2){return res*res*a;}else{return res*res;}}
 template<typename T>
 void printmat(T a,int n,int m){for(int i=0;i<n;i++){for(int j=0;j<m;j++){cout<<*(*(a+i)+j)<<" ";}cout<<endl;}}
-
 template<typename t>
 class tree{
     public:
@@ -102,6 +101,14 @@ class tree{
     ~tree(){for(auto i:this->child){delete i;}delete this;}
 };
 
+int countleafs(tree<int> *t){
+    if(t->child.size()==0){return 1;}
+    int num=0;
+    for(auto i:t->child){
+        num+=countleafs(i);
+    }
+    return num;
+}
 
 
 
@@ -116,13 +123,7 @@ void ans(){
     t->child[1]->addchild(6);
     t->child[1]->addchild(8);
     t->child[2]->addchild(9);
-    t->print();cout<<endl;
-    o(t->count())
-    o(t->height())
-    o(t->depth(t->child[0]->child[0]))
-    t->delchild(2);
-    t->print();
-    delete t;
+    o(countleafs(t))
 }
 int32_t main(){
     fast
